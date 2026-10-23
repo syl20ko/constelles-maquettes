@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Constelles, trois visuels pour la refonte de la page</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="copyright" content="Maquettes (c) Sylvain Caron 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Figtree:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--nuit:#2b1b2e;--nuit-2:#3a2640;--rose:#dd5680;--rose-fonce:#b83a63;--peche:#f6c3a5;--creme:#fbf6f1;--blanc:#fff;--encre:#2b1b2e;--gris:#6a5d66;--trait:#eadfd6;--display:'Fraunces',Georgia,serif;--body:'Figtree',system-ui,sans-serif;--r:18px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{font-family:var(--body);background:var(--creme);color:var(--encre);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased;overflow-x:clip}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.08}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+:focus-visible{outline:3px solid var(--peche);outline-offset:3px}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.4rem;border-radius:999px;font-weight:800;text-decoration:none;transition:transform .2s,box-shadow .2s;background:var(--nuit);color:#fff;cursor:pointer}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 30px -14px rgba(43,27,46,.6)}
+.btn svg{width:18px;height:18px}
+
+.top{background:var(--nuit);color:#fff;position:relative;overflow:hidden}
+.top::before{content:"";position:absolute;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(221,86,128,.32),transparent 60%);right:-280px;top:-420px}
+.top .ciel{position:absolute;inset:0;opacity:.5;pointer-events:none}
+.top .wrap{position:relative;padding:28px 0 72px}
+.top .ligne{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:56px}
+.top .logo{display:flex;align-items:center;gap:12px;font-family:var(--display);font-size:22px}
+.top .logo img{height:52px;width:52px;border-radius:50%;background:#fff;padding:3px}
+.top .qui{font-size:15px;color:#cdbfd0;text-align:right}
+.top .qui b{color:#fff;display:block}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--peche);margin-bottom:16px}
+.kicker i{width:30px;height:2px;background:var(--peche)}
+.top h1{font-size:clamp(40px,5vw,62px);max-width:15ch}
+.top h1 em{font-style:italic;color:var(--peche)}
+.top .lead{color:#e6dbe7;font-size:19px;max-width:52ch;margin:20px 0 28px}
+.sommaire{display:flex;gap:10px;flex-wrap:wrap}
+.sommaire a{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);text-decoration:none;font-weight:700;padding:8px 16px 8px 8px;border-radius:999px;transition:background .2s}
+.sommaire a:hover{background:rgba(255,255,255,.18)}
+.sommaire b{width:30px;height:30px;border-radius:50%;background:var(--rose);color:#fff;display:grid;place-items:center;font-family:var(--display)}
+.eventail{position:relative;height:420px}
+.eventail figure{position:absolute;width:58%;height:78%;border-radius:12px;overflow:hidden;box-shadow:0 30px 60px -20px rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.15);background:#fff;transition:transform .4s}
+.eventail img{width:100%;height:100%;object-fit:cover;object-position:top}
+.eventail .e1{left:0;top:8%;transform:rotate(-6deg)}
+.eventail .e2{left:21%;top:0;transform:rotate(1deg);z-index:2}
+.eventail .e3{right:0;top:12%;transform:rotate(7deg)}
+.eventail figure:hover{transform:rotate(0) scale(1.04);z-index:5}
+.eventail figcaption{position:absolute;left:12px;bottom:10px;background:var(--nuit);color:#fff;font-size:13px;font-weight:800;padding:4px 12px;border-radius:999px}
+
+.choix{padding:72px 0 24px}
+.choix h2{font-size:clamp(30px,3.4vw,42px)}
+.choix .intro{color:var(--gris);max-width:64ch;margin:8px 0 40px}
+.panneau{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center;background:var(--blanc);border-radius:var(--r);padding:36px;margin-bottom:32px;box-shadow:0 20px 50px -30px rgba(43,27,46,.4)}
+.panneau:nth-child(even){grid-template-columns:.75fr 1.25fr}
+.panneau:nth-child(even) .txt{order:-1}
+.ecrans{position:relative;padding-bottom:40px}
+.ecrans .desk{display:block;border-radius:12px;overflow:hidden;border:1px solid var(--trait);box-shadow:0 24px 50px -24px rgba(43,27,46,.55);background:#fff}
+.ecrans .chrome{height:28px;background:#efe7e1;display:flex;align-items:center;gap:6px;padding:0 10px}
+.ecrans .chrome i{width:9px;height:9px;border-radius:50%;background:#d8cbc2}
+.ecrans .desk img{aspect-ratio:1440/1040;object-fit:cover;object-position:top;width:100%}
+.ecrans .mob{position:absolute;right:-8px;bottom:0;width:26%;border-radius:18px;border:6px solid var(--nuit);overflow:hidden;box-shadow:0 20px 40px -18px rgba(43,27,46,.6);background:#fff;transition:transform .3s}
+.ecrans .mob img{aspect-ratio:390/792;object-fit:cover;object-position:top;width:100%}
+.panneau:hover .mob{transform:translateY(-8px) rotate(-2deg)}
+.num{display:block;font-family:var(--display);font-size:68px;line-height:1;color:transparent;-webkit-text-stroke:2px var(--rose-fonce);margin-bottom:8px}
+.tag{display:block;font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--rose-fonce);margin-bottom:6px}
+.txt h3{font-size:34px;margin-bottom:10px}
+.txt p{color:var(--gris)}
+.txt ul{list-style:none;margin:18px 0 24px;display:grid;gap:8px}
+.txt li{display:flex;gap:10px;font-weight:700;font-size:16px}
+.txt li svg{width:20px;height:20px;color:var(--rose-fonce);flex:none;margin-top:3px}
+.liens{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.liens .suivi{font-weight:700;font-size:15px;color:var(--rose-fonce)}
+.ambiance{display:flex;gap:6px;align-items:center;margin-top:20px;font-size:14px;color:var(--gris);flex-wrap:wrap}
+.ambiance i{width:22px;height:22px;border-radius:6px;border:1px solid rgba(0,0,0,.1)}
+
+.commun{padding:32px 0 64px}
+.boite{background:var(--nuit);color:#fff;border-radius:var(--r);padding:40px;display:grid;grid-template-columns:1fr 1.4fr;gap:48px}
+.boite h2{font-size:clamp(28px,3vw,36px)}
+.boite > div > p{color:#e0d4e2;margin-top:12px}
+.boite a{color:var(--peche);font-weight:700}
+.tuiles{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.tuile{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:20px}
+.tuile svg{width:26px;height:26px;color:var(--peche);margin-bottom:10px}
+.tuile b{display:block;font-family:var(--display);font-weight:600;font-size:19px;margin-bottom:4px}
+.tuile span{font-size:15px;color:#e0d4e2}
+.question{margin-top:20px;padding:16px 18px;border-radius:12px;background:rgba(246,195,165,.12);border:1px solid rgba(246,195,165,.35);color:#fbe7dc;font-size:15px}
+
+footer{padding:0 0 40px;font-size:14px;color:var(--gris)}
+footer .wrap{border-top:1px solid var(--trait);padding-top:20px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+@media(max-width:1024px){.hero,.panneau,.panneau:nth-child(even),.boite{grid-template-columns:1fr}.panneau:nth-child(even) .txt{order:0}.eventail{height:340px}}
+@media(max-width:640px){.top .wrap{padding:20px 0 48px}.top .ligne{margin-bottom:32px}.top .qui{text-align:left}.eventail{height:230px}.panneau{padding:20px}.num{font-size:48px}.txt h3{font-size:28px}.boite{padding:24px}.tuiles{grid-template-columns:1fr}.ecrans .mob{width:32%}}
+</style>
+</head>
+<body>
+<header class="top">
+  <svg class="ciel" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g stroke="rgba(246,195,165,.35)" stroke-width="1" fill="none"><path d="M90 120 220 80 330 170 470 110M760 90 880 150 1010 70 1120 160M150 480 290 420 380 500"/></g><g fill="#f6c3a5"><circle cx="90" cy="120" r="2.5"/><circle cx="220" cy="80" r="2"/><circle cx="330" cy="170" r="3"/><circle cx="470" cy="110" r="2"/><circle cx="760" cy="90" r="2"/><circle cx="880" cy="150" r="3"/><circle cx="1010" cy="70" r="2"/><circle cx="1120" cy="160" r="2.5"/><circle cx="150" cy="480" r="2"/><circle cx="290" cy="420" r="3"/><circle cx="380" cy="500" r="2"/></g></svg>
+  <div class="wrap">
+    <div class="ligne">
+      <span class="logo"><img src="assets/img/consetelleslogo.png" alt="Logo Constelles, l'arbre rose" width="500" height="500">Constelles</span>
+      <p class="qui"><b>Refonte de la page constelles-familiales.fr</b>Proposition de Sylvain Caron, octobre 2026</p>
+    </div>
+    <div class="hero">
+      <div>
+        <span class="kicker"><i></i>Refonte de la page</span>
+        <h1>Trois visuels pour la <em>refonte</em> de la page</h1>
+        <p class="lead">Zoé en grand dans les trois, et les mêmes contenus : chaque texte, chaque date, chaque prix de la page actuelle est repris. Seules la mise en page et l'ambiance changent. Le suivi des visites et des demandes reste identique, et le référencement Google est corrigé. À regarder sur ordinateur et sur téléphone.</p>
+        <div class="sommaire"><a href="#m1"><b>1</b>Rendez-vous</a><a href="#m2"><b>2</b>Cercle</a><a href="#m3"><b>3</b>Rencontre</a></div>
+      </div>
+      <div class="eventail" aria-hidden="true">
+        <figure class="e1"><img src="apercus/m2.webp" alt=""><figcaption>2 · Cercle</figcaption></figure>
+        <figure class="e2"><img src="apercus/m1.webp" alt=""><figcaption>1 · Rendez-vous</figcaption></figure>
+        <figure class="e3"><img src="apercus/m3.webp" alt=""><figcaption>3 · Rencontre</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="choix">
+  <div class="wrap">
+    <h2>Choisir un visuel</h2>
+    <p class="intro">Chaque maquette est une vraie page qui s'ouvre dans le navigateur. La barre jaune en haut permet de passer de l'une à l'autre ou de revenir ici.</p>
+
+    <article class="panneau" id="m1">
+      <div class="ecrans"><a class="desk" href="maquette-1-rendez-vous.html"><div class="chrome"><i></i><i></i><i></i></div><img src="apercus/m1.webp" alt="Aperçu de la maquette Rendez-vous sur ordinateur" width="1000" height="722"></a><a class="mob" href="maquette-1-rendez-vous.html"><img src="apercus/m1-mobile.webp" alt="Aperçu de la maquette Rendez-vous sur téléphone" width="390" height="792"></a></div>
+      <div class="txt">
+        <span class="num">01</span><span class="tag">Maquette 1</span>
+        <h3>Rendez-vous</h3>
+        <p>Pensée pour la personne qui arrive d'une annonce Google et veut savoir quand, où et combien. Le portrait de Zoé en grand, et posé dessus le billet de la prochaine journée avec les trois formules et leur prix.</p>
+        <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Portrait de Zoé et billet du 8 novembre en haut</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Les 4 dimanches en rangée de billets</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Les 3 formules comparées côte à côte</li></ul>
+        <div class="liens"><a class="btn" href="maquette-1-rendez-vous.html">Ouvrir la maquette <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        <div class="ambiance">Ambiance <i style="background:#fbf6f1"></i><i style="background:#dd5680"></i><i style="background:#2b1b2e"></i><i style="background:#f5c542"></i> crème, rose Constelles, prune, jaune soleil</div>
+      </div>
+    </article>
+
+    <article class="panneau" id="m2">
+      <div class="ecrans"><a class="desk" href="maquette-2-cercle.html"><div class="chrome"><i></i><i></i><i></i></div><img src="apercus/m2.webp" alt="Aperçu de la maquette Cercle sur ordinateur" width="1000" height="722"></a><a class="mob" href="maquette-2-cercle.html"><img src="apercus/m2-mobile.webp" alt="Aperçu de la maquette Cercle sur téléphone" width="390" height="792"></a></div>
+      <div class="txt">
+        <span class="num">02</span><span class="tag">Maquette 2</span>
+        <h3>Cercle</h3>
+        <p>Une page calme qui raconte une journée de constellation en chapitres, pour la personne qui hésite et a besoin d'être rassurée. Zoé au centre du cercle, comme au milieu du cercle de chaises de la salle.</p>
+        <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Zoé au centre du cercle, puis la salle</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Chapitres numérotés avec un sommaire</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Longs textes mis en page comme un magazine</li></ul>
+        <div class="liens"><a class="btn" href="maquette-2-cercle.html">Ouvrir la maquette <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        <div class="ambiance">Ambiance <i style="background:#f7f2ea"></i><i style="background:#ecc3bd"></i><i style="background:#7a2741"></i><i style="background:#8fa58a"></i> ivoire, rose poudré, bordeaux, sauge</div>
+      </div>
+    </article>
+
+    <article class="panneau" id="m3">
+      <div class="ecrans"><a class="desk" href="maquette-3-rencontre.html"><div class="chrome"><i></i><i></i><i></i></div><img src="apercus/m3.webp" alt="Aperçu de la maquette Rencontre sur ordinateur" width="1000" height="722"></a><a class="mob" href="maquette-3-rencontre.html"><img src="apercus/m3-mobile.webp" alt="Aperçu de la maquette Rencontre sur téléphone" width="390" height="792"></a></div>
+      <div class="txt">
+        <span class="num">03</span><span class="tag">Maquette 3</span>
+        <h3>Rencontre</h3>
+        <p>Zoé et la confiance d'abord, pour la personne qui choisit surtout qui va l'accompagner. Son portrait occupe la moitié de l'écran, avec la note 5 sur 5 et un témoignage. Lumière du jour, couleurs tirées de sa photo.</p>
+        <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Grand portrait de Zoé et 96 avis Google dès l'arrivée</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Les dates en cartes, les prix juste dessous</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Textes longs sur fond clair pour bien les lire</li></ul>
+        <div class="liens"><a class="btn" href="maquette-3-rencontre.html">Ouvrir la maquette <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        <div class="ambiance">Ambiance <i style="background:#fbf6ef"></i><i style="background:#f3b493"></i><i style="background:#d9a441"></i><i style="background:#3a2430"></i> crème, pêche, or chaud, brun prune</div>
+      </div>
+    </article>
+  </div>
+</main>
+
+<section class="commun">
+  <div class="wrap">
+    <div class="boite">
+      <div>
+        <h2>Ce qui est commun aux trois</h2>
+        <p>Le visuel change, le reste ne bouge pas : vos textes, vos dates, vos prix, vos ateliers et vos témoignages sont repris tels quels.</p>
+        <p class="question">Les nouveaux titres (dont le titre principal « Constellations familiales à Nice, en groupe ou en visio ») sont des propositions, à valider avant la mise en ligne. Vos textes sont repris mot pour mot.</p>
+      </div>
+      <div class="tuiles">
+        <div class="tuile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg><b>Tous les contenus</b><span>Textes, dates, prix, ateliers, témoignages, liste des sujets, photo et vidéo de la salle.</span></div>
+        <div class="tuile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg><b>Le même suivi</b><span>Les 12 blocs, les 16 boutons suivis et le formulaire gardent leurs noms. 4 boutons non suivis le deviennent.</span></div>
+        <div class="tuile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><b>Un meilleur référencement</b><span>Un vrai titre principal, des titres en ordre, les étoiles et les dates lisibles par Google.</span></div>
+        <div class="tuile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg><b>Pensé pour le téléphone</b><span>La barre « Appeler Zoé / Je réserve ma place » reste en bas de l'écran.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>Maquettes (c) Sylvain Caron 2026. Document interne, non publié.</span><span>23 octobre 2026</span></div></footer>
+</body>
+</html>
