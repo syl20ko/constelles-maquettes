@@ -89,7 +89,8 @@ h3{font-size:clamp(21px,2vw,25px);font-variation-settings:"SOFT" 100,"opsz" 36}
 .etoiles svg{width:20px;height:20px}
 
 /* ---------- HERO ---------- */
-.hero{position:relative;overflow:hidden;background:linear-gradient(115deg,var(--creme) 0%,var(--creme) 40%,var(--peche-clair) 70%,#fbe3d3 100%)}
+#block-section-form{background:linear-gradient(115deg,var(--creme) 0%,var(--creme) 40%,var(--peche-clair) 70%,#fbe3d3 100%)}
+.hero{position:relative;overflow:hidden}
 .hero::before{content:"";position:absolute;right:-8%;top:-12%;width:60%;height:120%;background:radial-gradient(closest-side,rgba(241,217,166,.55),transparent);pointer-events:none}
 .entete{position:relative;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0}
 .marque{display:flex;align-items:center;gap:12px;text-decoration:none}
@@ -129,7 +130,7 @@ h3{font-size:clamp(21px,2vw,25px);font-variation-settings:"SOFT" 100,"opsz" 36}
 @media(min-width:1300px){.citation{right:-40px;width:250px}}
 
 /* Formulaire */
-.zone-form{background:linear-gradient(180deg,#fbe3d3 0%,var(--peche-clair) 100%);padding:0 0 80px}
+.zone-form{padding:0 0 80px}
 .hero + .zone-form{margin-top:-1px}
 .carte-form{display:grid;grid-template-columns:.85fr 1.15fr;gap:40px;align-items:center;background:#fff;border-radius:var(--r);padding:36px 40px;box-shadow:var(--ombre)}
 .carte-form h2{font-size:clamp(26px,2.6vw,34px)}
